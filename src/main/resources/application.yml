@@ -1,0 +1,32 @@
+spring:
+    application:
+        name: flower-shop
+    datasource:
+        url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/flower-shop}
+        username: ${SPRING_DATASOURCE_USERNAME:postgres}
+        password: ${SPRING_DATASOURCE_PASSWORD:postgres}
+        driver-class-name: org.postgresql.Driver
+        initialization-mode: embedded
+    jpa:
+        open-in-view: false
+        properties:
+            hibernate.jdbc.time_zone: UTC
+        hibernate:
+            ddl-auto: update
+        database: POSTGRESQL
+        show-sql: false
+        generate-ddl: true
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+    thymeleaf:
+        cache: false
+        enabled: true
+        prefix: classpath:/static/templates/
+        suffix: .html
+
+
+server:
+    servlet:
+        session:
+            cookie:
+                http-only: true
+    port: ${PORT:8080}
