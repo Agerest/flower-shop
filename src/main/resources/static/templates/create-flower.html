@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flower-shop</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
+
+    <link type="text/css" rel="stylesheet" href="../css/main.css" media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+        <div class="container">
+            <a href="/" class="brand-logo">
+                <img src="../images/logo.png" height="30" width="50" alt="">
+            </a>
+            <ul class="right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About us</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div id="index" class="main container">
+    <div class="container">
+        <h2 class="center-align">CREATE FLOWER</h2>
+        <form class="col12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">info</i>
+                    <input id="name" name="name" type="text" autofocus required>
+                    <label for="name">name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">info</i>
+                    <input id="description" name="description" type="text" required>
+                    <label for="description">description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">info</i>
+                    <input id="price" name="price" type="text" required>
+                    <label for="price">price</label>
+                </div>
+            </div>
+            <div class="row">
+                <div id="select" class="input-field col s12">
+                    <select id="category" class="browser-default">
+                        <option value="" disabled selected>Choose your category</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row last-item">
+                <div class="file-field input-field col s12">
+                    <div class="btn">
+                        <span>Browse</span>
+                        <input id="photo1" type="file" name="photo" accept="Image/*">
+                        <label for="photo1"></label>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input id="photo2" class="file-path validate" type="text" name="photo" placeholder="photo">
+                        <label for="photo2"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="center-align">
+                <button type="button" id="submit-flower" class="btn waves-effect waves-light">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/request.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/create-flower.js"></script>
+</body>
+</html>

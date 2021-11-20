@@ -30,3 +30,7 @@ server:
             cookie:
                 http-only: true
     port: ${PORT:8080}
+
+logging:
+    level:
+        root: info

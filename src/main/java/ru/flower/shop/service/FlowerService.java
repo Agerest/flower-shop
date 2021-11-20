@@ -1,5 +1,6 @@
 package ru.flower.shop.service;
 
+import ru.flower.shop.domain.Flower;
 import ru.flower.shop.dto.flower.FlowerRequestDTO;
 import ru.flower.shop.dto.flower.FlowerResponseDTO;
 
@@ -17,4 +18,6 @@ public interface FlowerService {
     void update(UUID id, FlowerRequestDTO requestDTO);
 
     List<FlowerResponseDTO> getByCategory(UUID category);
+
+    Flower getDomain(UUID id);
 }

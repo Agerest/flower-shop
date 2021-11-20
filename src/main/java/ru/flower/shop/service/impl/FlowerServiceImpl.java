@@ -41,7 +41,8 @@ public class FlowerServiceImpl implements FlowerService {
         return flowerMapper.toDto(flower);
     }
 
-    private Flower getDomain(UUID id) {
+    @Override
+    public Flower getDomain(UUID id) {
         return flowerRepository.findById(id)
                 .orElseThrow(() -> new IllegalStateException("Could not find flower"));
     }

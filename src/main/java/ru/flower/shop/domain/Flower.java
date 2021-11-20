@@ -43,6 +43,6 @@ public class Flower {
     @ManyToOne
     private Category category;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "flower")
     private List<Comment> comments;
 }

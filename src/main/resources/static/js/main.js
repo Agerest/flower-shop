@@ -24,8 +24,14 @@ $(function () {
             "                <p>" + flowers[i].price + " $</p>\n" +
             "            </div>\n" +
             "            <div class=\"card-action\">\n" +
-            "                <a class='btn' id=\"" + flowers[i].id + "\">go</a>\n" +
+            "                <a class='btn go-flower' id=\"" + flowers[i].id + "\">go</a>\n" +
             "            </div>\n" +
             "         </div>");
     }
+    $('body').on("click", ".go-flower", function () {
+        flowerId = $(".go-flower").attr('id');
+        console.log(flowerId)
+        window.localStorage.setItem("flowerId", flowerId)
+        window.location.href = "/flower";
+    })
 });
