@@ -6,4 +6,6 @@ import ru.flower.shop.dto.UserDTO;
 public interface UserService {
 
     User registerNewUserAccount(UserDTO userDto);
+
+    User findByUsername(String username);
 }

@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.util.UUID;
@@ -28,4 +29,22 @@ public class BasketValue {
 
     @Column(name = "count")
     private Integer count;
+
+    @ManyToOne
+    @JoinColumn(name = "basket_id")
+    private Basket basket;
+
+    public BasketValue(Flower flower, Basket basket) {
+        this.flower = flower;
+        this.basket = basket;
+        this.count = 0;
+    }
+
+    public void increment() {
+        count++;
+    }
+
+    public void decrement() {
+        count--;
+    }
 }

@@ -1,4 +1,5 @@
 $(function () {
+    let categories = localStorage.getItem("categories");
     $.each(categories, function (key, value) {
         $('#category')
             .append($("<option></option>")

@@ -8,7 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -23,6 +25,9 @@ public class Basket {
     @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
 
-    @OneToMany
-    private List<BasketValue> values;
+    @OneToMany(mappedBy = "basket")
+    private List<BasketValue> values = new ArrayList<>();
+
+    @OneToOne(mappedBy = "basket")
+    private User user;
 }

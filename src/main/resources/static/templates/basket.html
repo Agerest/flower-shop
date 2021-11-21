@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Flower-shop</title>
+    <title>beaware</title>
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -22,35 +22,25 @@
             <a href="/" class="brand-logo">
                 <img src="../images/logo.png" height="30" width="50" alt="">
             </a>
-            <ul id="top-panel" class="right">
+            <ul class="right">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About us</a></li>
+                <li><a href="/account">Account</a></li>
             </ul>
         </div>
 
     </div>
 </nav>
 
-<div id="index" class="main container">
-    <div class="row center-align">
-        <h1>FLOWERS</h1>
-    </div>
+<div class="main container center-align">
     <div class="row">
-        <div id="select" class="input-field col s12">
-            <select id="category" class="browser-default">
-                <option value="" disabled selected>Choose your category</option>
-            </select>
-        </div>
-    </div>
-    <div class="row center-align">
-        <div class="cards">
+        <h2>BASKET DATA</h2>
+        <div id="info" class="row main">
+            <div class="row">
+                <ul class="collection"></ul>
+            </div>
 
         </div>
-    </div>
-    <div class="row center-align">
-        <a id="add-flower" class="btn-floating btn-large waves-effect waves-light red" href="/create-flower">
-            <i class="material-icons">add</i>
-        </a>
     </div>
 </div>
 
@@ -58,6 +48,6 @@
 <script type="text/javascript" src="../js/materialize.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="../js/request.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/basket.js"></script>
 </body>
 </html>
