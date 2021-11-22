@@ -1,5 +1,5 @@
 $(function () {
-    flowerId = window.localStorage.getItem("flowerId");
+    let flowerId = window.localStorage.getItem("flowerId");
     console.log(flowerId)
     req.open('GET', 'api/flower/get?id=' + flowerId, false);
     req.send();

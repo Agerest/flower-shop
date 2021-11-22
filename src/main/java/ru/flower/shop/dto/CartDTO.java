@@ -5,14 +5,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BasketDTO {
+public class CartDTO {
 
     private String flower;
     private byte[] image;
     private Integer count;
     private BigDecimal price;
+    private String flowerId;
 }

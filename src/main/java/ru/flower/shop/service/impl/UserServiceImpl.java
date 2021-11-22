@@ -4,12 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.flower.shop.domain.Basket;
+import ru.flower.shop.domain.Cart;
 import ru.flower.shop.domain.User;
 import ru.flower.shop.dto.UserDTO;
 import ru.flower.shop.mapper.UserMapper;
 import ru.flower.shop.repository.UserRepository;
-import ru.flower.shop.service.BasketService;
+import ru.flower.shop.service.CartService;
 import ru.flower.shop.service.RoleService;
 import ru.flower.shop.service.UserService;
 import ru.flower.shop.utils.RoleConstant;
@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final RoleService roleService;
     private final PasswordEncoder passwordEncoder;
-    private final BasketService basketService;
+    private final CartService cartService;
 
     @Transactional
     @Override
@@ -33,8 +33,8 @@ public class UserServiceImpl implements UserService {
             throw new IllegalStateException("There is an account with that username: " + userDto.getUsername());
         }
         User user = userMapper.toEntity(userDto);
-        Basket basket = basketService.save(new Basket());
-        user.setBasket(basket);
+        Cart cart = cartService.save(new Cart());
+        user.setCart(cart);
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         user.setRoles(Collections.singleton(roleService.getByName(RoleConstant.USER_ROLE)));
         return userRepository.save(user);

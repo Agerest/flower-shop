@@ -1,14 +1,14 @@
 package ru.flower.shop.service;
 
-import ru.flower.shop.domain.Basket;
-import ru.flower.shop.dto.BasketDTO;
+import ru.flower.shop.domain.Cart;
+import ru.flower.shop.dto.CartDTO;
 
 import java.util.List;
 import java.util.UUID;
 
-public interface BasketService {
+public interface CartService {
 
-    Basket save(Basket basket);
+    Cart save(Cart cart);
 
     void add(String username, UUID flowerId);
 
@@ -18,5 +18,5 @@ public interface BasketService {
 
     void deleteOne(String username, UUID flowerId);
 
-    List<BasketDTO> get(String username);
+    List<CartDTO> get(String username);
 }

@@ -46,8 +46,8 @@ public class User implements UserDetails {
     private Set<Role> roles;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "basket_id")
-    private Basket basket;
+    @JoinColumn(name = "cart_id")
+    private Cart cart;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

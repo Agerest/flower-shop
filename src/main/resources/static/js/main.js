@@ -62,14 +62,14 @@ $(function () {
             "         </div>");
     }
     $('body').on("click", ".go-flower", function () {
-        flowerId = $(".go-flower").attr('id');
+        let flowerId = $(".go-flower").attr('id');
         console.log(flowerId)
         window.localStorage.setItem("flowerId", flowerId)
         window.location.href = "/flower";
     })
     $('body').on("click", ".buy-flower", function () {
         let flowerId = $(".go-flower").attr('id');
-        req.open('POST', 'api/basket/add?flowerId=' + flowerId, false);
+        req.open('POST', 'api/cart/add?flowerId=' + flowerId, false);
         req.send();
         console.log(req.status);
         window.location.href = "/main";

@@ -16,8 +16,8 @@ import java.util.UUID;
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name = "basket_value")
-public class BasketValue {
+@Table(name = "cart_value")
+public class CartValue {
 
     @Id
     @GeneratedValue(generator = "uuid2")
@@ -31,12 +31,12 @@ public class BasketValue {
     private Integer count;
 
     @ManyToOne
-    @JoinColumn(name = "basket_id")
-    private Basket basket;
+    @JoinColumn(name = "cart_id")
+    private Cart cart;
 
-    public BasketValue(Flower flower, Basket basket) {
+    public CartValue(Flower flower, Cart cart) {
         this.flower = flower;
-        this.basket = basket;
+        this.cart = cart;
         this.count = 0;
     }
 

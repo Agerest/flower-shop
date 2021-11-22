@@ -1,11 +1,16 @@
 $(function () {
+    req.open('GET', 'api/category/list', false);
+    req.send();
+    console.log(req.status);
+    let categories = JSON.parse(req.responseText);
+    console.log(categories);
     $.each(categories, function (key, value) {
         $('#category')
             .append($("<option></option>")
                 .attr("value", value.id)
                 .text(value.name));
     })
-    flowerId = window.localStorage.getItem("flowerId");
+    let flowerId = window.localStorage.getItem("flowerId");
     console.log(flowerId)
     req.open('GET', 'api/flower/get?id=' + flowerId, false);
     req.send();

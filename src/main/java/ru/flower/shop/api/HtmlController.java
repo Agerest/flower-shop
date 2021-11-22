@@ -16,9 +16,9 @@ public class HtmlController {
         return "main";
     }
 
-    @GetMapping("/basket")
-    public String basket() {
-        return "basket";
+    @GetMapping("/cart")
+    public String cart() {
+        return "cart";
     }
 
     @GetMapping("/create-flower")
@@ -44,5 +44,10 @@ public class HtmlController {
     @GetMapping("/edit-flower")
     public String editFlower() {
         return "edit-flower";
+    }
+
+    @GetMapping("/about")
+    public String about() {
+        return "about";
     }
 }

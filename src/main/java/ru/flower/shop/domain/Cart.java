@@ -17,17 +17,17 @@ import java.util.UUID;
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name = "basket")
-public class Basket {
+@Table(name = "cart")
+public class Cart {
 
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
 
-    @OneToMany(mappedBy = "basket")
-    private List<BasketValue> values = new ArrayList<>();
+    @OneToMany(mappedBy = "cart")
+    private List<CartValue> values = new ArrayList<>();
 
-    @OneToOne(mappedBy = "basket")
+    @OneToOne(mappedBy = "cart")
     private User user;
 }

@@ -1,5 +1,9 @@
 $(function () {
-    let categories = localStorage.getItem("categories");
+    req.open('GET', 'api/category/list', false);
+    req.send();
+    console.log(req.status);
+    let categories = JSON.parse(req.responseText);
+    console.log(categories);
     $.each(categories, function (key, value) {
         $('#category')
             .append($("<option></option>")
@@ -47,11 +51,10 @@ $(function () {
         if (req.status === 204) {
             flowerId = req.responseText;
             console.log(flowerId);
+            window.location.href = "/main";
         } else {
             $('.check-info').remove();
             $('.last-item').append("<h5 class=\"red-text check-info center-align\">check input data</h5>");
-            return;
         }
-        window.location.href = "/";
     });
 })

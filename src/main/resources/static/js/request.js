@@ -1,10 +1,12 @@
 var req = new XMLHttpRequest();
 
 $(function () {
-    req.open('GET', 'api/basket/count', false);
+    req.open('GET', 'api/cart/count', false);
     req.send();
     console.log(req.status);
-    let count = req.responseText;
-    console.log(count);
-    $('#top-panel').append('<li><a href="/basket">Basket (' + count + ')</a></li>');
+    if (req.status === 200) {
+        let count = req.responseText;
+        console.log(count);
+        $('#top-panel').append('<li><a href="/cart">Cart (' + count + ')</a></li>');
+    }
 })
