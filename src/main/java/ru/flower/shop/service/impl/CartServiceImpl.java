@@ -12,6 +12,7 @@ import ru.flower.shop.repository.CartValueRepository;
 import ru.flower.shop.service.CartService;
 import ru.flower.shop.service.FlowerService;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -92,5 +93,15 @@ public class CartServiceImpl implements CartService {
                             flower.getPrice(), flower.getId().toString());
                 })
                 .collect(Collectors.toList());
+    }
+
+    @Transactional
+    @Override
+    public BigDecimal getSum(String username) {
+        Cart cart = cartRepository.getByUserUsername(username);
+        return cart.getValues().stream()
+                .map(value -> value.getFlower().getPrice().multiply(BigDecimal.valueOf(value.getCount())))
+                .reduce(BigDecimal::add)
+                .orElse(BigDecimal.ZERO);
     }
 }

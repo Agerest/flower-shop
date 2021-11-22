@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.flower.shop.dto.CartDTO;
 import ru.flower.shop.service.CartService;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -54,5 +55,11 @@ public class CartController {
     public List<CartDTO> get(@AuthenticationPrincipal UserDetails userDetails) {
         log.info("Getting cart values list");
         return cartService.get(userDetails.getUsername());
+    }
+
+    @GetMapping("/sum")
+    public BigDecimal sum(@AuthenticationPrincipal UserDetails userDetails) {
+        log.info("Getting sum");
+        return cartService.getSum(userDetails.getUsername());
     }
 }

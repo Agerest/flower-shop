@@ -3,6 +3,7 @@ package ru.flower.shop.service;
 import ru.flower.shop.domain.Cart;
 import ru.flower.shop.dto.CartDTO;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,4 +20,6 @@ public interface CartService {
     void deleteOne(String username, UUID flowerId);
 
     List<CartDTO> get(String username);
+
+    BigDecimal getSum(String username);
 }

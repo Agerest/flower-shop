@@ -17,6 +17,12 @@ $(function () {
             '            </li>');
     }
 
+    req.open('GET', 'api/cart/sum', false);
+    req.send();
+    console.log(req.status);
+    let sum = req.responseText;
+    $('#sum').append('<h4>sum = ' + sum + '$</h4>');
+
     $('body').on("click", ".delete-flower", function () {
         let flowerId = $(this).attr('id');
         req.open('DELETE', 'api/cart/delete?flowerId=' + flowerId, false);
