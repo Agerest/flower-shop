@@ -11,7 +11,7 @@ import java.io.InputStream;
 
 public final class ImageUtils {
 
-    private static final long MAX_FILE_UPLOAD_SIZE = 307200;
+    private static final long MAX_FILE_UPLOAD_SIZE = 3072000;
 
     private ImageUtils() {
     }
